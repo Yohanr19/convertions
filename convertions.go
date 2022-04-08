@@ -1,5 +1,5 @@
 /*
---Takes value and show units convertions--
+ Takes value and show units convertions--
 -Weight in Kilograms cnnverted to Lb
 -Weight in Lb to Kilograms
 -Temperature in Celcius to Fahrenheit
