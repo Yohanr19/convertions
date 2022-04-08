@@ -40,7 +40,7 @@ func WKtoP(k Kilograms) Pounds {
 
 //Takes a value of type Pounds(lb) and returns a corresponding value of type Kilograms(kg)
 func WPtoK(p Pounds) Kilograms {
-	return Kilograms(p / 0.45359237)
+	return Kilograms(p / 2.20462262185)
 }
 
 //Make each type implement Stringer interface with method String()
