@@ -1,17 +1,17 @@
 /*
 --Takes value and show units convertions--
----Weight in Kilograms cnnverted to Lb
----Weight in Lb to Kilograms
----Temperature in Celcius to Fahrenheit
----Temperature in Fahrenheit to Celcius
----Distance in Meters to Yards
----Distance in Yards to Meters
----Distance in Meters to Foot
----Distance in Foot to Meters
----Distance in Foot to Yards
----Distance in Yards to Foot
----Volume in Liters to Gallons
----Volume to Gallons in Liters
+-Weight in Kilograms cnnverted to Lb
+-Weight in Lb to Kilograms
+-Temperature in Celcius to Fahrenheit
+-Temperature in Fahrenheit to Celcius
+-Distance in Meters to Yards
+-Distance in Yards to Meters
+-Distance in Meters to Foot
+-Distance in Foot to Meters
+-Distance in Foot to Yards
+-Distance in Yards to Foot
+-Volume in Liters to Gallons
+-Volume to Gallons in Liters
 */
 package convertions
 
