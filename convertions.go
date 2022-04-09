@@ -61,7 +61,7 @@ func DFtoM(f Foots) Meters { return Meters(f * 0.3048) }
 func DYtoF(y Yards) Foots { return Foots(y * 3.0) }
 
 // DFtoY converts a value of Foots(ft)) to Yards(yd)
-func DFtoY(f Yards) Yards { return Yards(f / 3.0) }
+func DFtoY(f Foots) Yards { return Yards(f / 3.0) }
 
 // VLtoG converts a value of Liters(L)) to Gallons(gal(US))
 func VLtoG(l Liters) Gallons { return Gallons(l * 0.2641720524) }
