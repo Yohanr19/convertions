@@ -40,10 +40,10 @@ func WKtoP(k Kilograms) Pounds { return Pounds(k * 2.20462262185) }
 func WPtoK(p Pounds) Kilograms { return Kilograms(p / 2.20462262185) }
 
 // TCtoF converts a Celsius temperature to Fahrenheit.
-func TCToF(c Celsius) Fahrenheit { return Fahrenheit(c*9.0/5.0 + 32) }
+func TCtoF(c Celsius) Fahrenheit { return Fahrenheit(c*9.0/5.0 + 32) }
 
 // TFtoC converts a Fahrenheit temperature to Celsius.
-func TFToC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5.0 / 9.0) }
+func TFtoC(f Fahrenheit) Celsius { return Celsius((f - 32) * 5.0 / 9.0) }
 
 // DMtoY converts a value of Meters(m) to Yards (yd)
 func DMtoY(m Meters) Yards { return Yards(m / 0.9144) }
