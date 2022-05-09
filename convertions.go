@@ -30,6 +30,7 @@ type Yards float64
 type Foots float64
 type Liters float64
 type Gallons float64
+type Kelvin float64
 
 //Define methods for type convertion
 
@@ -69,6 +70,18 @@ func VLtoG(l Liters) Gallons { return Gallons(l * 0.2641720524) }
 // VGtoL converts a value of Gallons(gal(US)) to Liters(L)
 func VGtoL(g Gallons) Liters { return Liters(g / 0.2641720524) }
 
+// CToK converts a Celsius temperature to Kelvin
+func CToK(c Celsius) Kelvin { return Kelvin(c + 273.15) }
+
+// KToC converts a Kelvin temperature to Celsius
+func KToC(k Kelvin) Celsius { return Celsius(k - 273.15) }
+
+// KToF converts a Kelvin temperature to Fahrenheit
+func KToF(k Kelvin) Fahrenheit { return Fahrenheit((k-273.15)*9.0/5.0 + 32) }
+
+// KToK converts a Fahrenheit temperature to Kelvin
+func FToK(f Fahrenheit) Kelvin { return Kelvin((f-32)*5.0/9.0 + 273.15) }
+
 //Make each type implement Stringer interface with method String()
 func (k Kilograms) String() string  { return fmt.Sprintf("%.2fkg", k) }
 func (p Pounds) String() string     { return fmt.Sprintf("%.2flb", p) }
@@ -79,3 +92,22 @@ func (y Yards) String() string      { return fmt.Sprintf("%.4fyd", y) }
 func (f Foots) String() string      { return fmt.Sprintf("%.4fft", f) }
 func (l Liters) String() string     { return fmt.Sprintf("%.4fL", l) }
 func (g Gallons) String() string    { return fmt.Sprintf("%.4fgal(US)", g) }
+
+type CelsiusFlag struct{ Celsius }
+
+func (f *CelsiusFlag) Set(s string) error {
+	var unit string
+	var value float64
+	fmt.Sscanf(s, "%f%s", &value, &unit) // no error check needed
+	switch unit {
+	case "C", "°C":
+		f.Celsius = Celsius(value)
+		return nil
+	case "F", "°F":
+		f.Celsius = TFtoC(Fahrenheit(value))
+		return nil
+	case "K", "°K":
+	f.Celsius = KToC(Kelvin(value))
+	return nil
+	}
+	return fmt.Errorf("invalid temperature %q", s) }
